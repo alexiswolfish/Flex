@@ -1,17 +1,15 @@
 /*
  * jQuery FlexSlider v2.2.0
- * http://www.woothemes.com/flexslider/
- *
- * Copyright 2012 WooThemes
- * Free to use under the GPLv2 license.
- * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Contributing author: Tyler Smith (@mbmufffin)
- *
- * Modified by Alex Wolfe for WolfeFlex
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ *
+ * Modified by Alex Wolfe for WolfeFlex
  */
-
-
 /* Browser Resets
 *********************************/
 .flex-container a:active,
@@ -77,7 +75,7 @@ html[xmlns] .slides {display: block;}
 .loading .flex-viewport { max-height: 300px; }
 .flexslider .slides { zoom: 1; max-height:600px; overflow:hidden; }
 .carousel li { margin-right: 5px; }
-
+.flex-caption {	text-align:center;}
 /* Direction Nav */
 .flex-direction-nav {height: 0; }
 .flex-direction-nav a  { display: block; width: 40px; 

@@ -23,8 +23,7 @@ echo '<script type="text/javascript" charset="utf-8">
 }	
 add_action('wp_head', 'wfs_addScript');
 //use reg expressions to get the post IDs from gallery shortcode
-function wfs_getGalleryIDs(){
-	$post_content = get_the_content();
+function wfs_getGalleryIDs(){	$post_content = get_the_content();
 	$hasGallery = preg_match('/\[gallery.*ids=.(.*).\]/', $post_content, $ids);
 	$flexHtml = ' ';		//create html list for the slider
 	if( $hasGallery = 1){
@@ -32,13 +31,10 @@ function wfs_getGalleryIDs(){
 		$flexHtml .= "
 					<div class=\"flexslider\">\n";
 		$flexHtml .= "<ul class=\"slides\">\n";
-			foreach ($array_id as $id){
-			$flexHtml .= "<li>";
-			$flexHtml .= wp_get_attachment_image( $id,'medium');
-			$flexHtml .= "</li>";
+			foreach ($array_id as $id){			$caption =  get_post($id);						$flexHtml .= "<li>";			$flexHtml .= wp_get_attachment_image( $id,'medium');			if( !empty($caption->post_excerpt)){				$flexHtml .= "<p class=\"flex-caption\">";				$flexHtml .= $caption->post_excerpt;				$flexHtml .= "</p>";			}
+			$flexHtml .= "</li>\n";
 		}
-		$flexHtml .= "</ul></div>
-						";
+		$flexHtml .= "</ul></div>";
 	}
 	else{
 		$flexHtml = false;
